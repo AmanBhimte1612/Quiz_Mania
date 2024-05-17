@@ -1,0 +1,332 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="static\css\output.css" rel="stylesheet">
+  <style>
+    
+
+    .right-container, .left-container {
+      transition: transform 0.2s ease;
+      overflow: hidden;
+    }
+    /* #greenicon{
+      display:none ;
+    } */
+  </style>
+</head>
+<body>
+  
+  <div  class="flex">
+    <div id="leftContainer" class="left-container z-30 flex bg-colo_yellow justify-center items-center h-[100vh] w-1/2">
+      <div class="flex justify-center items-center flex-col">
+        <div id="registerpara" class="bg-colo_yellow p- rounded-lg" style="display: block;">
+          <div class="flex justify-center">
+            <div class="bg-colo_yellow m-2 rounded-lg text-white text-6xl">Hello Friend!</div>
+          </div>
+          <div class="flex justify-center">
+            <div class="bg-colo_yellow m-2 rounded-lg text-white text-2xl">Already Registered? </div>
+            <div class="bg-colo_yellow m-2 rounded-lg text-white text-2xl">Click here to Login </div>
+          </div>
+        </div>
+        <div id="loginpara" class="bg-colo_yellow rounded-lg" style="display: none;">
+          <div class="flex justify-center">
+            <div class="bg-colo_yellow m-2 rounded-lg text-white text-6xl">Weclome Back!</div>
+          </div>
+          <div class="flex justify-center">
+            <div class="bg-colo_yellow m-2 rounded-lg text-white text-2xl">Don't have account?</div>
+            <div class="bg-colo_yellow m-2 rounded-lg text-white text-2xl">Click here to Register</div>
+          </div>
+        </div>
+        <div id="buttondiv" class="bg-colo_yellow m-2 rounded-lg">
+          <button id="SwapButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium w-28 text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Login!?</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="rightContainer" class="flex right-container bg-colo_white justify-center items-center h-[100vh] w-1/2">
+      
+      <div id="RegisterForm" class="flex justify-center items-center " style="display: block;">
+        <div class="bg-colo_grey p-4 rounded-lg">
+          <form class="p-10 w-[65vh]">
+            <div class="bg-colo_grey m-2 rounded-lg font-bold text-center text-white text-6xl">Register</div>
+            <div id="name_div" class="py-4">
+                <label for="full_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full name</label>
+                <input type="text" id="full_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Wick" required />
+            </div>
+            <div id="phone_enro_div" class="grid  mb-6">
+                <div>
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+                    <input  id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678"  required />
+                </div>
+            </div>
+
+              <div class="mb-6">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+              </div>
+              <div class="mb-6">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                <input data-popover-target="popover-password" data-popover-placement="bottom" type="password" id="register_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <div data-popover id="popover-password" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+                    <div class="p-3 space-y-2">
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Must have at least 8 characters</h3>
+                        <div class="grid grid-cols-4 gap-2">
+                            
+                            <div id="Index_1" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                            <div id="Index_2" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                            <div id="Index_3" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                            <div id="Index_4" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                        </div>
+                        <p>It’s better to have:</p>
+                        <ul>
+                            <li class="flex items-center mb-1">
+                              <svg id="greeniconCase" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                              </svg>
+                              <svg id="rediconCase" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                                Upper & lower case letters
+                            </li>
+                            <li class="flex items-center mb-1">
+                              <svg id="greeniconSymbol" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                </svg>
+                                <svg id="rediconSymbol" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                A symbol (#$&......)
+                            </li>
+                            <li class="flex items-center mb-1">
+                              <svg id="greeniconDigit" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                </svg>
+                                <svg id="rediconDigit" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                A Digit
+                            </li>
+                            <li class="flex items-center">
+                              <svg id="greeniconLen" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                </svg>
+                                <svg id="rediconLen" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+
+                                A longer password (min. 12 chars.)
+                            </li>
+                        </ul>
+                </div>
+                <div data-popper-arrow></div>
+              </div>
+              </div>
+
+            <div class="flex items-start mb-6">
+                <div class="flex items-center h-5">
+                <input id="show_password" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                </div>
+                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Show Password</label>
+            </div>
+            
+            <div class="flex justify-center">
+              <button id="registerButton" type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-2 focus:ring-red-300 font-medium rounded-full text-lg h-12 w-[20vh]  px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Register</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      <div id="LoginForm" class="flex justify-center items-center" style="display: none;">
+        <div class="w-[60vh] bg-colo_grey p-4 rounded-lg">
+          <form class="p-10">
+            <div class="bg-colo_grey m-2 rounded-lg font-bold text-center text-white text-6xl">Login</div>
+              <div class="mb-6">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                <input type="email" id="log_email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+              </div>
+              <div class="mb-6">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                <input  type="password" id="login_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                
+              </div>
+
+            <div class="flex items-start mb-6">
+                <div class="flex items-center h-5">
+                <input id="show_logpassword" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                </div>
+                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Show Password </label>
+            </div>
+            
+            <div class="flex justify-center">
+              <button id="LoginButton" type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-2 focus:ring-red-300 font-medium rounded-full text-lg h-12 w-[20vh]  px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Login</button>
+            </div>
+          </form>
+        </div>
+      </div> 
+
+    </div>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+`   <script src="static\js\script.js"></script>
+  <script>
+    //function to slide left and right
+    var SwapButton = document.getElementById('SwapButton');
+    var leftContainer = document.getElementById('leftContainer');
+    var rightContainer = document.getElementById('rightContainer');
+
+    var registerpara = document.getElementById('registerpara');
+    var loginpara = document.getElementById('loginpara');
+
+    var LoginForm = document.getElementById('LoginForm');
+    var RegisterForm = document.getElementById('RegisterForm');
+
+    var isSwapped = false;
+
+    SwapButton.addEventListener('click', function() {
+        
+        if (!isSwapped) {
+          leftContainer.style.transform = "translateX(100%)";
+          rightContainer.style.transform = "translateX(-100%)";
+          LoginForm.style.display = "block";
+          loginpara.style.display = "block";
+          RegisterForm.style.display = "none";
+          registerpara.style.display = "none";
+          SwapButton.textContent = "Register!";
+          isSwapped = true;
+        } else { 
+          
+          LoginForm.style.display = "none";
+          loginpara.style.display = "none";
+          RegisterForm.style.display = "block";
+          registerpara.style.display = "block";
+          leftContainer.style.transform = "translateX(0)";
+          rightContainer.style.transform = "translateX(0)";
+          SwapButton.textContent = "Login!";
+            
+            isSwapped = false;
+        }
+    });
+  </script>
+  
+
+  <script>
+    // Function to validate password
+    function validatePassword() {
+      const passwordInput = document.getElementById('register_password');
+      const passwordValue = passwordInput.value;
+
+      const Index_1 = document.getElementById('Index_1');
+      const Index_2 = document.getElementById('Index_2');
+      const Index_3 = document.getElementById('Index_3');
+      const Index_4 = document.getElementById('Index_4');
+  
+      const popoverPassword = document.getElementById('popover-password');
+  
+      const uppercaseRegex = /[A-Z]/;
+      const lowercaseRegex = /[a-z]/;
+      const symbolRegex = /[!@#$%^&*()_\-?><]/;
+      const digitRegex = /\d/;
+  
+      const hasUppercase = uppercaseRegex.test(passwordValue);
+      const hasLowercase = lowercaseRegex.test(passwordValue);
+      const hasSymbol = symbolRegex.test(passwordValue);
+      const hasDigit = digitRegex.test(passwordValue);
+      const isLengthValid = passwordValue.length >= 8 && passwordValue.length <= 12;
+  
+      // Update icon based on validation
+      const greenIconCase = popoverPassword.querySelector('#greeniconCase');
+      const redIconCase = popoverPassword.querySelector('#rediconCase');
+
+      const greenIconSymbol = popoverPassword.querySelector('#greeniconSymbol');
+      const redIconSymbol = popoverPassword.querySelector('#rediconSymbol');
+
+      const greenIconLen = popoverPassword.querySelector('#greeniconLen');
+      const redIconLen = popoverPassword.querySelector('#rediconLen');
+      
+      const greenIconDigit = popoverPassword.querySelector('#greeniconDigit');
+      const redIconDigit = popoverPassword.querySelector('#rediconDigit');
+
+      if (hasUppercase && hasLowercase) {
+          greenIconCase.style.display = 'block'; 
+          redIconCase.style.display = 'none'; 
+          Index_1.style.backgroundColor = 'rgb(14 159 110 )';
+      }else {          
+          greenIconCase.style.display = 'none'; 
+          redIconCase.style.display = 'block'; 
+          Index_1.style.backgroundColor = 'rgb(229 231 235)';
+        }
+
+        if (hasSymbol) {
+          greenIconSymbol.style.display = 'block'; 
+          redIconSymbol.style.display = 'none';
+          Index_2.style.backgroundColor = 'rgb(14 159 110 )';
+          
+        }else {          
+          greenIconSymbol.style.display = 'none'; 
+          redIconSymbol.style.display = 'block'; 
+          Index_2.style.backgroundColor = 'rgb(229 231 235)';
+      }
+
+      if (isLengthValid) {
+          greenIconLen.style.display = 'block'; 
+          redIconLen.style.display = 'none';
+          Index_3.style.backgroundColor = 'rgb(14 159 110 )';
+      }else {          
+          greenIconLen.style.display = 'none'; 
+          redIconLen.style.display = 'block';
+          Index_3.style.backgroundColor = 'rgb(229 231 235)';
+
+      }
+
+      if (hasDigit) {
+          greenIconDigit.style.display = 'none'; 
+          redIconDigit.style.display = 'block';
+          Index_4.style.backgroundColor = 'rgb(14 159 110 )';
+      }else {          
+          greenIconDigit.style.display = 'none'; 
+          redIconDigit.style.display = 'block';
+          Index_4.style.backgroundColor = 'rgb(229 231 235)';
+
+      }
+    }
+  
+    // Event listener for password input
+    document.getElementById('register_password').addEventListener('input', validatePassword);
+  </script>
+  
+  <script>
+    // Function to toggle password visibility
+    function togglePasswordVisibility() {
+      const registerInput = document.getElementById('register_password');
+      const loginInput = document.getElementById('login_password');
+      const checkbox = document.getElementById('show_password');
+      const logcheckbox = document.getElementById('show_logpassword');
+  
+      if (checkbox.checked) {
+        registerInput.type = 'text';
+      } else {
+        registerInput.type = 'password';
+      }
+      
+      if (logcheckbox.checked) { 
+        loginInput.type = 'text';
+      } else {
+        loginInput.type = 'password';
+      }
+    }
+    
+    // Adding event listeners separately for each checkbox
+    document.getElementById('show_password').addEventListener('change', togglePasswordVisibility);
+    document.getElementById('show_logpassword').addEventListener('change', togglePasswordVisibility);
+</script>
+
+</body>
+</html>
+
+
+

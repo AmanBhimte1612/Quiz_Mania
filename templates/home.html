@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test</title>
+    <link href="static\css\output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        /* Set the default background color to semi-transparent */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    
+</head>
+<body>
+    <nav class="bg-colo_yellow dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex -center space-x-3 rtl:space-x-reverse">
+                
+                <span class="self-center text-4xl font-bold whitespace-nowrap  dark:text-white">QM</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_grey w-28 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-colo_darker dark:hover:bg-colo_dark dark:focus:ring-colo_grey">LogOut</button>
+
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-colo_yellow md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-colo_yellow dark:bg-colo_yellow md:dark:bg-colo_yellow dark:border-gray-700">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-colo_darker rounded hover:bg-colo_dark focus:font-semibold focus:text-colo_dark md:hover:bg-transparent md:hover:text-colo_grey md:p-0 md:dark:hover:text-blue-500 dark:text-colo_darker dark:hover:bg-gray-700 dark:hover:text-colo_dark md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                    </li>
+                    <li>
+                        <a href="#quiz" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 focus:font-semibold focus:text-colo_grey md:hover:bg-transparent md:hover:text-colo_grey md:p-0 md:dark:hover:text-blue-500 dark:text-colo_grey dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">AttemptQuiz</a>
+                    </li>
+                    <li>
+                        <a href="#profile" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 focus:font-semibold focus:text-colo_grey md:hover:bg-transparent md:hover:text-colo_grey md:p-0 md:dark:hover:text-blue-500 dark:text-colo_grey dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">ViewProfile</a>
+                    </li>
+                    <li>
+                        <a href="#scores" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 focus:font-semibold focus:text-colo_grey md:hover:bg-transparent md:hover:text-colo_grey md:p-0 md:dark:hover:text-blue-500 dark:text-colo_grey dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Scores</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex bg-colo_white h-16 w-full">
+        
+    </div>
+    <div class="flex bg-colo_white h-[80vh]  w-full justify-center items-center">
+        
+        <div id="home" class="page" style="display: block;">
+            
+            <div class="flex justify-center h-[80vh] w-screen items-center my-20 ">
+                
+                <div>
+                    <div class="bg-colo_grey w-full mx-5 text-colo_darker   rounded-lg mb-4">
+                        <div class="flex bg-colo_grey  p-4 rounded-lg">
+                            <div >
+                                <div class="flex justify-start items-end p-5 bg-colo_grey">
+                                    <h1 class="text-7xl font-bold  mr-4">Welcome!</h1>
+                                    <h1 class="font-semibold text-5xl">{{ profiles[0] }}</h1>
+                                </div>
+                                <h1 class="px-5 text-3xl ">to QuizMania</h1>
+                                <div class="px-5 py-5">
+                                    <h1 class="text-3xl ">It's best platform for checking your skills in Python</h1>
+                                    <h1 class="text-3xl ">and competing with others</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-colo_white  p-4 rounded-lg">
+
+                        <div class="flex bg-colo_grey text-colo_darker p-4 rounded-lg">
+                            <div >
+                                
+                                <h1 class="text-3xl ">Navigation to explore more</h1>
+                                
+                                this part is under construction please use above navigation tabs
+                                    
+
+                                <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-colo_darker hover:text-colo_dark dark:text-colo_darker dark:hover:text-colo_dark border-colo_dark dark:border-colo_dark" data-tabs-inactive-classes="dark:border-transparent text-colo_darker hover:text-colo_dark dark:text-colo_dark border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-colo_grey" role="tablist">
+                                        <li class="me-2" role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-styled-tab" data-tabs-target="#styled-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                                        </li>
+                                        <li class="me-2" role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
+                                        </li>
+                                        <li class="me-2" role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+                                        </li>
+                                        <li role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-styled-tab" data-tabs-target="#styled-contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="default-styled-tab-content">
+                                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                                    </div>
+                                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                                    </div>
+                                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                                    </div>
+                                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                                    </div>
+                                </div>
+
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+
+
+        <div id="quiz" class="page" style="display: none;"><div class="flex">
+
+            <div  class="bg-colo_white p-8 max-w-md rounded-lg  relative">
+
+                <div id="indicators-carousel" class="fixed top-20 left-0  w-full h-[80vh]" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div id="div1" class="relative h-[80vh] opacity-0 overflow-hidden rounded-lg">
+                        <!-- Item 1 -->
+                        <div class="duration-700 ease-in-out" data-carousel-item="active">
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">1.{{ li[0].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[0].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[0].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[0].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[0].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                    <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6" >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 2 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">2.{{ li[1].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[1].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[1].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[1].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[1].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"  >Submit</button>
+
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">3.{{ li[2].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[2].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[2].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[2].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[2].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"   >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 4 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">4.{{ li[3].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[3].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[3].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[3].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[3].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"   >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 5 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">5.{{ li[4].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[4].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[4].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[4].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[4].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"  >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 6 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">6.{{ li[5].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[5].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[5].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[5].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[5].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"   >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 7 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">7.{{ li[6].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[6].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[6].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[6].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[6].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"   >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 8 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">8.{{ li[7].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[7].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[7].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[7].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[7].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"   >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Item 9 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">9.{{ li[8].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[8].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[8].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[8].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[8].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button  id="submit_btn" type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6"   >Submit</button>
+                                </div>
+                            </div>
+                        </div> 
+            
+                        <!-- Item 10 -->
+                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="flex justify-center  bg-colo_white h-full w-full">
+                                <div class=" p-4 rounded-lg w-full">
+                                    <div class="flex justify-center w-full">
+                                      <div class="bg-colo_grey m-2 p-4 text-2xl h-40 w-full rounded-lg">10.{{ li[9].que }}</div>
+                                      
+                                    </div>
+                                    <div class="flex  items-center">
+                                        <div class=" bg-colo_grey m-2 p-4 rounded-lg">
+                                            <div class=" m-2 p-4 rounded-lg font-semibold ">Options</div>
+                                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">A:{{ li[9].ops[0] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">B:{{ li[9].ops[1] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">C:{{ li[9].ops[2] }}</label>
+                                                    </div>
+                                                </li>
+                                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                                    <div class="flex items-center ps-3">
+                                                        <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-colo_darker bg-gray-100 border-gray-300 focus:ring-colo_darker dark:focus:ring-colo_darker dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">D:{{ li[9].ops[3] }}</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                
+                                        </div>
+                                    </div>
+                                     <button id="submit_btn"type="button" class="text-white bg-colo_darker hover:bg-colo_dark focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6" >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider indicators -->
+                    <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 9" data-carousel-slide-to="8"></button>
+                        <button type="button" class="w-3 h-3 bg-colo_dark focus:bg-colo_darker hover:bg-colo_darker rounded-full" aria-current="false" aria-label="Slide 10" data-carousel-slide-to="9"></button>
+                    </div>
+                    
+                    
+                    
+                    <!-- Slider controls -->
+                    <!-- <button type="button" class="absolute top-64 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button> -->
+                    <button id="Next_btn" type="button" class="absolute opacity-0 text-colo_white bottom-20 rounded-lg m-5 bg-colo_darker focus:bg-colo_dark hover:colo_dark   end-0 z-30 focus:ring-4 focus:outline-none focus:ring-colo_yellow h-10 w-28 dark:focus:ring-colo_yellow font-medium  text-sm px-5 py-2.5 text-center me-2 mb-2 mx-6" data-carousel-next>
+                        Next
+                    </button>
+                </div>
+
+                <div class="flex z-50 h-full w-full">
+
+                    <div id="div2" class="absolute h-[30vh] w-[50vh] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-lg shadow-lg">
+                        <h1 class="text-gray-800 text-lg mb-4">Are you ready to Sart Quiz ?</h1>
+                        <div class="flex bottom-0 justify-center">
+                            <button id="yesBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded mr-4">Yes</button>
+                            <button id="noBtn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">No</button>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+            
+        
+        </div></div>
+
+
+        <div id="profile" class="page" style="display: none;">
+            <div id="profileform"class="flex-1 bg-colo_grey h-[80vh] w-[80vh]">
+                
+                <div class="flex justify-center items-center ">
+                  <div class=" p-4 rounded-lg">
+                    <form class="">
+                        <div class="bg-colo_grey m-2 rounded-lg font-semibold text-center text-colo_dark text-6xl">Profile</div>
+
+                      <div class="grid w-[60vh]">
+
+                          <div>
+                              <label for="full_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full name</label>
+                              <input type="text" aria-label="disabled input" id="full_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{profiles[0]}}" placeholder="John Wick" disabled />
+                          </div>
+                          
+                          <div>
+                              <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+                              <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{profiles[1]}}" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" disabled />
+                          </div>
+                         
+                      </div>
+                      <div class="mb-6">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" value="{{profiles[2]}}" disabled/>
+                      </div>
+                      <div class="mb-6">
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                        <input data-popover-target="popover-password" data-popover-placement="bottom" type="password" id="profile_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{profiles[3]}}" disabled />
+                        <div data-popover id="popover-password" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+                            <div class="p-3 space-y-2">
+                                <h3 class="font-semibold text-gray-900 dark:text-white">Must have at least 8 characters</h3>
+                                <div class="grid grid-cols-4 gap-2">
+                                    
+                                    <div id="Index_1" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                                    <div id="Index_2" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                                    <div id="Index_3" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                                    <div id="Index_4" class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                                </div>
+                                <p>It’s better to have:</p>
+                                <ul>
+                                    <li class="flex items-center mb-1">
+                                      <svg id="greeniconCase" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                      </svg>
+                                      <svg id="rediconCase" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                      </svg>
+                                        Upper & lower case letters
+                                    </li>
+                                    <li class="flex items-center mb-1">
+                                      <svg id="greeniconSymbol" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                        </svg>
+                                        <svg id="rediconSymbol" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        A symbol (#$&......)
+                                    </li>
+                                    <li class="flex items-center mb-1">
+                                      <svg id="greeniconDigit" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                        </svg>
+                                        <svg id="rediconDigit" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        A Digit
+                                    </li>
+                                    <li class="flex items-center">
+                                      <svg id="greeniconLen" class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: none;" viewBox="0 0 16 12">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                        </svg>
+                                        <svg id="rediconLen" class="w-3 h-3 me-2.5 text-red-500 dark:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" style="display: block;" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+        
+                                        A longer password (min. 12 chars.)
+                                    </li>
+                                </ul>
+                        </div>
+                        <div data-popper-arrow></div>
+                      </div>
+                      </div>
+                       
+                      <div class="flex items-start mb-6">
+                          <div class="flex items-center h-5">
+                          <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"  />
+                          </div>
+                          <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Enable to Update Your Profile</label>
+                      </div>
+                      
+                      <div class="flex justify-center">
+                        <button id="update_profile" type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-2 focus:ring-red-300 font-medium rounded-full text-lg h-12 w-[20vh]  px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" disabled>Update</button>
+
+                      </div>
+                    </form>
+          
+                  </div>
+                    
+                </div>
+            
+            </div> 
+            
+        
+        </div>
+
+
+        <div id="scores" class="page w-full h-full bg-colo_white" style="display: none;">
+
+
+            your score is 
+            <h1 class="font-semibold text-5xl">{{ profiles[4] }}</h1>
+
+
+        </div>
+
+
+    </div>
+    
+    <footer class="fixed bottom-0 left-0 z-2 text-colo_darker w-full p-4 bg-colo_yellow border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6  dark:border-gray-600">
+        <span class="text-sm  sm:text-center">© 2023 <a href="#" class="hover:underline">™</a>. All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium   sm:mt-0">
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        document.querySelector('nav ul').addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href');
+                document.querySelectorAll('.page').forEach(page => {
+                    if ('#' + page.id === targetId) {
+                        page.style.display = 'block';
+                    } else {
+                        page.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        // Get div1 and div2 elements
+        const div1 = document.getElementById('div1');
+        const div2 = document.getElementById('div2');
+        const btn = document.getElementById('Next_btn');
+
+        // Get the yes and no buttons
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+
+        // Function to show div2
+        function showDiv2() {
+            div2.classList.remove('hidden');
+        }
+
+        // Function to hide div2
+        function hideDiv2() {
+            div2.classList.add('hidden');
+        }
+
+        // Event listener for yes button
+        yesBtn.addEventListener('click', function() {
+            hideDiv2();
+            
+            div1.classList.remove('opacity-0');
+            btn.classList.remove('opacity-0');
+        });
+
+        // Event listener for no button
+        noBtn.addEventListener('click', hideDiv2);
+    </script>
+    <script>
+        // Function to validate password
+        function validatePassword() {
+          const passwordInput = document.getElementById('profile_password');
+          const passwordValue = passwordInput.value;
+    
+          const Index_1 = document.getElementById('Index_1');
+          const Index_2 = document.getElementById('Index_2');
+          const Index_3 = document.getElementById('Index_3');
+          const Index_4 = document.getElementById('Index_4');
+      
+          const popoverPassword = document.getElementById('popover-password');
+      
+          const uppercaseRegex = /[A-Z]/;
+          const lowercaseRegex = /[a-z]/;
+          const symbolRegex = /[!@#$%^&*()_\-?><]/;
+          const digitRegex = /\d/;
+      
+          const hasUppercase = uppercaseRegex.test(passwordValue);
+          const hasLowercase = lowercaseRegex.test(passwordValue);
+          const hasSymbol = symbolRegex.test(passwordValue);
+          const hasDigit = digitRegex.test(passwordValue);
+          const isLengthValid = passwordValue.length >= 8 && passwordValue.length <= 12;
+      
+          // Update icon based on validation
+          const greenIconCase = popoverPassword.querySelector('#greeniconCase');
+          const redIconCase = popoverPassword.querySelector('#rediconCase');
+    
+          const greenIconSymbol = popoverPassword.querySelector('#greeniconSymbol');
+          const redIconSymbol = popoverPassword.querySelector('#rediconSymbol');
+    
+          const greenIconLen = popoverPassword.querySelector('#greeniconLen');
+          const redIconLen = popoverPassword.querySelector('#rediconLen');
+          
+          const greenIconDigit = popoverPassword.querySelector('#greeniconDigit');
+          const redIconDigit = popoverPassword.querySelector('#rediconDigit');
+    
+          if (hasUppercase && hasLowercase) {
+              greenIconCase.style.display = 'block'; 
+              redIconCase.style.display = 'none'; 
+              Index_1.style.backgroundColor = 'rgb(14 159 110 )';
+          }else {          
+              greenIconCase.style.display = 'none'; 
+              redIconCase.style.display = 'block'; 
+              Index_1.style.backgroundColor = 'rgb(229 231 235)';
+            }
+    
+            if (hasSymbol) {
+              greenIconSymbol.style.display = 'block'; 
+              redIconSymbol.style.display = 'none';
+              Index_2.style.backgroundColor = 'rgb(14 159 110 )';
+              
+            }else {          
+              greenIconSymbol.style.display = 'none'; 
+              redIconSymbol.style.display = 'block'; 
+              Index_2.style.backgroundColor = 'rgb(229 231 235)';
+          }
+    
+          if (isLengthValid) {
+              greenIconLen.style.display = 'block'; 
+              redIconLen.style.display = 'none';
+              Index_3.style.backgroundColor = 'rgb(14 159 110 )';
+          }else {          
+              greenIconLen.style.display = 'none'; 
+              redIconLen.style.display = 'block';
+              Index_3.style.backgroundColor = 'rgb(229 231 235)';
+    
+          }
+    
+          if (hasDigit) {
+              greenIconDigit.style.display = 'none'; 
+              redIconDigit.style.display = 'block';
+              Index_4.style.backgroundColor = 'rgb(14 159 110 )';
+          }else {          
+              greenIconDigit.style.display = 'none'; 
+              redIconDigit.style.display = 'block';
+              Index_4.style.backgroundColor = 'rgb(229 231 235)';
+    
+          }
+        }
+      
+        // Event listener for password input
+        document.getElementById('profile_password').addEventListener('input', validatePassword);
+    </script>
+    <script>
+        document.getElementById('submit_btn').addEventListener('click', function() {
+            // Get the selected option
+            const selectedOptionElement = document.querySelector('input[name="list-radio"]:checked');
+            if (!selectedOptionElement) {
+                alert('Please select an option before submitting.');
+                return;
+            }
+            const selectedOption = selectedOptionElement.value;
+
+            // Send the selected option to the Flask route using AJAX
+            fetch('/submit option', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ option: selectedOption })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response if needed
+                console.log(data);
+                // Programmatically click the "Next" button
+                document.getElementById('next_btn').click();
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+    <script src="static\js\script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>
+
+
