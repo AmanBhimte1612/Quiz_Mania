@@ -79,7 +79,7 @@ document.getElementById('LoginButton').addEventListener('click', function() {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.message === 'register successful') {
+            if (data.message === 'Login successful') {
                 window.location.href = data.redirect_url;
             } else {
                 alert('Register failed');
